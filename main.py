@@ -20,8 +20,8 @@ for i in choice:
     user_decimal_data.append(i)
 
 
-print user_binary_data
-print user_decimal_data
+# print user_binary_data
+# print user_decimal_data
 
 
 
@@ -33,7 +33,8 @@ n_1=[]#List of all 1 no.of '1'
 n_d_1=[]
 n_2=[]#List of all 2 no.of '1'
 n_d_2=[]
-n_3=[]#List of all 3 no.of '1'
+n_3=[]#List of all 3 no.of '1'# print temp1
+                    # print temp2
 n_d_3=[]
 n_4=[]
 n_d_4=[]
@@ -142,7 +143,45 @@ if(len(n_3)>=1 and len(n_4)>=1):
                     # print temp2
                     implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
+# print implicants
+rpi=[] #list that store no. that are not present in implicants
+
+x=0
+while x < 15 :
+    c=0
+
+    y=0
+    while y <= len(implicants)-1:
+
+
+
+        for z in range(0,len(implicants[y])-1):
+            # print len(implicants)-1
+            # print z
+            # print x
+            if x==implicants[y][z]:
+                c=True
+        y=y+1
+    if c==True :
+        ja="do nothing"
+    else :
+        # print x
+        rpi.append(x)
+    x=x+1
+
+# print rpi
+kpi=[] #list that stores inputted minterms that are not present in implicants
+for x in rpi:
+    for y in user_decimal_data:
+        if x==y:
+            # print x
+            kpi.append(x)
+
+for x in kpi:
+    implicants.append([x,bin_data[x]])
 print implicants
+
+
 
 
 ####----------Read this---------------------
