@@ -9,16 +9,17 @@ while ll<=l :
     mn=int(input("enter your minterm"))
     choice.append(mn)
     ll=ll+1
-print choice #for debugging
+
 user_binary_data=[] #list of user choosn terms converted to binary
 user_decimal_data=[] #list of user choosn terms in decimal form
 
 for i in choice:
-    print i
+
     user_binary_data.append(bin_data[i])
     user_decimal_data.append(i)
-    print user_binary_data
-    print user_decimal_data
+
+print user_binary_data
+print user_decimal_data
 
 ''' STEP-1 combining based on no. of ones present '''
 
@@ -34,7 +35,7 @@ n_4=[]
 n_d_4=[]
 for i in range(len(user_binary_data)): #This loops checks how many '1's are there in user inputted minterms like 1101 has 3 ones
     count=user_binary_data[i].count('1') #'1100'.count('1') returns u 2  i.e,no of repeted terms
-    print count
+
     if count is 0:
         n_0.append(user_binary_data[i])
         n_d_0.append(user_decimal_data[i])
@@ -50,8 +51,8 @@ for i in range(len(user_binary_data)): #This loops checks how many '1's are ther
     if count is 4:
         n_4.append(user_binary_data[i])
         n_d_4.append(user_decimal_data[i])
-print n_0,n_1,n_3,n_2,n_4 #just for debugging
-print n_d_0,n_d_1,n_d_3,n_d_2,n_d_4 #just for debugging
+print n_0,n_1,n_2,n_3,n_4 #just for debugging
+print n_d_0,n_d_1,n_d_2,n_d_3,n_d_4 #just for debugging
 
 ''' STEP-2 groping based on one diff term  '''
 
@@ -76,24 +77,42 @@ prime_imp=[]
 for i1 in n_0: #For each element in n_1
 
     for i2 in n_1: #Comparing with each element in n_2
+        print i1
+        print i2
         temp=combine_s2(i1,i2)
+        print temp
         if temp[0] is True:
             temp1=i1
+            print temp1
             temp2=i2
+            print temp2
             i1=list(i1)
+            print i1
             i1[temp[1]]='_' #Postion to be daashed
+
             i1=''.join(i1)
+            print i1
             prime_imp.append([n_0.index(temp1),n_1.index(temp2),i1])
+            print prime_imp
 #-----------------For lists n_1,n_2 -------------------
 for i1 in n_1: #For each element in n_1
     for i2 in n_2: #Comparing with each element in n_2
+        print i1
+        print i2
         temp=combine_s2(i1,i2)
+        print temp
         if temp[0] is True:
             temp1=i1
+            print temp1
             temp2=i2
+            print temp2
             i1=list(i1)
+            print i1
             i1[temp[1]]='_' #Postion to be daashed
             ii=''.join(i1)
+            print i1
+            print n_1.index(temp1)
+            print n_2.index(temp2)
             prime_imp.append([n_1.index(temp1),n_2.index(temp2),i1])
 #-----------------For lists n_2,n_3 -------------------
 for i1 in n_2: #For each element in n_1
