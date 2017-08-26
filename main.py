@@ -73,3 +73,10 @@ for b in binary_terms:
 
     no_of_ones.append(count)
 print no_of_ones
+
+def combine_s1(x1,x2):  #for combining two minterms based on the no. ones present
+     p=0
+
+     while i <4 :
+         if not (x1[i] = x2[i]) :
+             similar_no
