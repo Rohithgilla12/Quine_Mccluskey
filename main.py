@@ -70,17 +70,67 @@ def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
         else :
 
             return [False,None]
-primt_implicants=[]
+prime_imp=[]
 #Add a try block if n_1 has no elements it gives out a error
+#-----------------For lists n_0,n_1 -------------------
+g1=0
+g2=0
+for i1 in n_0: #For each element in n_1
+
+    for i2 in n_1: #Comparing with each element in n_2
+        temp=combine_s2(i1,i2)
+        if temp[0] is True:
+            i1=list(i1)
+            i1[temp[1]]='_' #Postion to be daashed
+            ii1=''.join(i1)
+            prime_imp.append([n_d_0[g1],n_d_1[g2],ii1])
+        g2=g2+1
+    g1=g1+1
+#-----------------For lists n_1,n_2 -------------------
+h1=0
+h2=0
 for i1 in n_1: #For each element in n_1
     for i2 in n_2: #Comparing with each element in n_2
         temp=combine_s2(i1,i2)
         if temp[0] is True:
             i1=list(i1)
             i1[temp[1]]='_' #Postion to be daashed
-            prime_implicants.append(''.join(i1))
+            ii1=''.join(i1)
+            prime_imp.append([n_d_1[h1],n_d_2[h2],ii1])
+        h2=h2+1
+    h1=h1+1
 
-print prime_implicants
+#-----------------For lists n_1,n_2 -------------------
+v1=0
+v2=0
+for i1 in n_2: #For each element in n_1
+    for i2 in n_3: #Comparing with each element in n_2
+        temp=combine_s2(i1,i2)
+        if temp[0] is True:
+            i1=list(i1)
+            i1[temp[1]]='_' #Postion to be daashed
+            ii1=''.join(i1)
+            prime_imp.append([n_d_2[v1],n_d_3[v2],ii1])
+        v2=v2+1
+    v1=v1+1
+#-----------------For lists n_2,n_3 -------------------
+b1=0
+b2=0
+for i1 in n_3: #For each element in n_1
+    for i2 in n_4: #Comparing with each element in n_2
+        temp=combine_s2(i1,i2)
+        if temp[0] is True:
+            i1=list(i1)
+            i1[temp[1]]='_' #Postion to be daashed
+            ii1=''.join(i1)
+            prime_imp.append([n_d_3[b1],n_d_4[b2],ii1])
+
+
+print prime_imp
+
+
+
+
 
 # ''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
 #
