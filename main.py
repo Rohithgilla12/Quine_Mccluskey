@@ -73,63 +73,56 @@ def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
 prime_imp=[]
 #Add a try block if n_1 has no elements it gives out a error
 #-----------------For lists n_0,n_1 -------------------
-g1=0
-g2=0
 for i1 in n_0: #For each element in n_1
 
     for i2 in n_1: #Comparing with each element in n_2
         temp=combine_s2(i1,i2)
         if temp[0] is True:
+            temp1=i1
+            temp2=i2
             i1=list(i1)
             i1[temp[1]]='_' #Postion to be daashed
-            ii1=''.join(i1)
-            prime_imp.append([n_d_0[g1],n_d_1[g2],ii1])
-        g2=g2+1
-    g1=g1+1
+            i1=''.join(i1)
+            prime_imp.append([n_0.index(temp1),n_1.index(temp2),i1])
 #-----------------For lists n_1,n_2 -------------------
-h1=0
-h2=0
 for i1 in n_1: #For each element in n_1
     for i2 in n_2: #Comparing with each element in n_2
         temp=combine_s2(i1,i2)
         if temp[0] is True:
+            temp1=i1
+            temp2=i2
             i1=list(i1)
             i1[temp[1]]='_' #Postion to be daashed
-            ii1=''.join(i1)
-            prime_imp.append([n_d_1[h1],n_d_2[h2],ii1])
-        h2=h2+1
-    h1=h1+1
-
-#-----------------For lists n_1,n_2 -------------------
-v1=0
-v2=0
+            ii=''.join(i1)
+            prime_imp.append([n_1.index(temp1),n_2.index(temp2),i1])
+#-----------------For lists n_2,n_3 -------------------
 for i1 in n_2: #For each element in n_1
     for i2 in n_3: #Comparing with each element in n_2
         temp=combine_s2(i1,i2)
         if temp[0] is True:
+            temp1=i1
+            temp2=i2
             i1=list(i1)
             i1[temp[1]]='_' #Postion to be daashed
-            ii1=''.join(i1)
-            prime_imp.append([n_d_2[v1],n_d_3[v2],ii1])
-        v2=v2+1
-    v1=v1+1
-#-----------------For lists n_2,n_3 -------------------
-b1=0
-b2=0
+            i1=''.join(i1)
+            prime_imp.append([n_2.index(temp1),n_3.index(temp2),i1])
+
+#-----------------For lists n_3,n_4 -------------------
 for i1 in n_3: #For each element in n_1
     for i2 in n_4: #Comparing with each element in n_2
         temp=combine_s2(i1,i2)
         if temp[0] is True:
+            temp1=i1
+            temp2=i2
             i1=list(i1)
             i1[temp[1]]='_' #Postion to be daashed
-            ii1=''.join(i1)
-            prime_imp.append([n_d_3[b1],n_d_4[b2],ii1])
-
-
+            i1=''.join(i1)
+            prime_imp.append([n_3.index(temp1),n_4.index(temp2),i1])
 print prime_imp
 
 
-
+####----------Read this---------------------
+#if a list is l=[1,2,3,4,5] we can get index value by using this l.index('2') gives 3 as answer i used that concept
 
 
 # ''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
