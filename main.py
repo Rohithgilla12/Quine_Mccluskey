@@ -1,18 +1,18 @@
 '''
-bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','111']
-choice=[i for i in range(4)]
-print choice
-user_data=[]
+bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011',1100,1101,1111]#Binary_data
+choice=[] #userinput (like 1,4,5,6)
+print choice #for debugging
+user_data=[] #list of user choosn terms converted to binary
 for i in choice:
     print i
     user_data.append(bin_data[i])
     print user_data
-n_0=[]
-n_1=[]
-n_2=[]
-n_3=[]
-for i in range(len(user_data)):
-    count=user_data[i].count('1')
+n_0=[] #List of all 0 no.of '1' 
+n_1=[]#List of all 1 no.of '1' 
+n_2=[]#List of all 2 no.of '1' 
+n_3=[]#List of all 3 no.of '1' 
+for i in range(len(user_data)): #This loops checks how many '1's are there in user inputted minterms like 1101 has 3 ones
+    count=user_data[i].count('1') #'1100'.count('1') returns u 2  i.e,no of repeted terms
     print count
     if count is 0:
         n_0.append(user_data[i])
@@ -22,7 +22,7 @@ for i in range(len(user_data)):
         n_2.append(user_data[i])
     if count is 3:
         n_3.append(user_data[i])
-print n_0,n_1,n_3,n_2
+print n_0,n_1,n_3,n_2 #just for debugging
 '''
 #i did not understand your code check this version for converting minterms into binary strings
 def decimal_to_binary_converter(x) : # function for coverting decimal numbers into binary numbers
