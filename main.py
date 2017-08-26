@@ -77,7 +77,7 @@ def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
         else :
 
             return [False,None]
-prime_imp=[]
+implicants=[]
 #Add a try block if n_1 has no elements it gives out a error
 
 # print'----------------For lists n_0,n_1 -------------------'
@@ -94,7 +94,7 @@ if(len (n_0)>=1 and len(n_1)>=1):
 
                     # print temp1
                     # print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
+                    implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 # print '-----------------For lists n_1,n_2 -------------------'
 
 if(len(n_1)>=1 and len(n_2)>=1):
@@ -109,7 +109,7 @@ if(len(n_1)>=1 and len(n_2)>=1):
 
                     # print temp1
                     # print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
+                    implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 # print'-----------------For lists n_2,n_3 -------------------'
 
 if(len(n_2)>=1 and len(n_3)>=1):
@@ -124,7 +124,7 @@ if(len(n_2)>=1 and len(n_3)>=1):
 
                     # print temp1
                     # print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
+                    implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
 # print'-----------------For lists n_3,n_4 -------------------'
 
@@ -140,9 +140,9 @@ if(len(n_3)>=1 and len(n_4)>=1):
 
                     # print temp1
                     # print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
+                    implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
-print prime_imp
+print implicants
 
 
 ####----------Read this---------------------
