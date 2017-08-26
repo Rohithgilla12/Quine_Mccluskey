@@ -68,64 +68,71 @@ def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
         if (cou==1):
               return [True,pos]
         else :
+
             return [False,None]
+implicants=[]
+for i1 in n_1:
+    for i2 in n_2:
+        temp=combine_s2(i1,i2)
+        if temp[0] is True:
+            i=list(i)
+            i[temp[1]]='_'
+            implicants.append(''.join(i))
 
-
-
-''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
-
-'''next step , using above function we should group based on one diff and dash the pos (10_1) '''
-
-
-
-'''
-#i did not understand your code check this version for converting minterms into binary strings
-def decimal_to_binary_converter(x) : # function for coverting decimal numbers into binary numbers
-    if x==0 :
-        return "0000"
-    if x==1 :
-        return "0001"
-    if x==2 :
-        return "0010"
-    if x==3 :
-        return "0011"
-    if x==4 :
-        return "0100"
-    if x==5 :
-        return "0101"
-    if x==6 :
-        return "0110"
-    if x==7 :
-        return "0111"
-
-
-list_len=int(input('enter the no. of minterms'))
-l=list_len-1 #first element of a list always has 0 assigned to it
-kk=0 #just a looping variable
-binary_terms=[] #list that stores the binary forms of inputted minterms
-minterms_decimal=[] #list that stores cooresponding decimals
-while (kk<=l):
-    k=int(input("enter  minterm"))
-    minterms_decimal.append(k)
-    kb=decimal_to_binary_converter(k) #decimal to binary converter
-    binary_terms.append(kb)
-    kk=kk+1
-print binary_terms
-
-# step 1 : grouping terms with same number of ones
-
-no_of_ones=[]
-
-for b in binary_terms:
-    bb=list(b) # bb is a list of digits if a binary number b eg: if b="0100" ,bb= [0,1,0,0]
-    ss=0
-    count=0
-    while ss<4 :
-        j= bb[ss]
-        if j=="1":
-            count=count+1
-        ss=ss+1
-
-    no_of_ones.append(count)
-print no_of_ones
-'''
+# ''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
+#
+# '''next step , using above function we should group based on one diff and dash the pos (10_1) '''
+#
+#
+#
+# '''
+# #i did not understand your code check this version for converting minterms into binary strings
+# def decimal_to_binary_converter(x) : # function for coverting decimal numbers into binary numbers
+#     if x==0 :
+#         return "0000"
+#     if x==1 :
+#         return "0001"
+#     if x==2 :
+#         return "0010"
+#     if x==3 :
+#         return "0011"
+#     if x==4 :
+#         return "0100"
+#     if x==5 :
+#         return "0101"
+#     if x==6 :
+#         return "0110"
+#     if x==7 :
+#         return "0111"
+#
+#
+# list_len=int(input('enter the no. of minterms'))
+# l=list_len-1 #first element of a list always has 0 assigned to it
+# kk=0 #just a looping variable
+# binary_terms=[] #list that stores the binary forms of inputted minterms
+# minterms_decimal=[] #list that stores cooresponding decimals
+# while (kk<=l):
+#     k=int(input("enter  minterm"))
+#     minterms_decimal.append(k)
+#     kb=decimal_to_binary_converter(k) #decimal to binary converter
+#     binary_terms.append(kb)
+#     kk=kk+1
+# print binary_terms
+#
+# # step 1 : grouping terms with same number of ones
+#
+# no_of_ones=[]
+#
+# for b in binary_terms:
+#     bb=list(b) # bb is a list of digits if a binary number b eg: if b="0100" ,bb= [0,1,0,0]
+#     ss=0
+#     count=0
+#     while ss<4 :
+#         j= bb[ss]
+#         if j=="1":
+#             count=count+1
+#         ss=ss+1
+#
+#     no_of_ones.append(count)
+# print no_of_ones
+# '''
