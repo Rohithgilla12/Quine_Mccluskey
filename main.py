@@ -143,7 +143,7 @@ if(len(n_3)>=1 and len(n_4)>=1):
                     # print temp2
                     implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
-# print implicants
+print implicants
 rpi=[] #list that store no. that are not present in implicants
 
 x=0
@@ -176,10 +176,10 @@ for x in rpi:
         if x==y:
             # print x
             kpi.append(x)
-
+e_prime_implicants=[]
 for x in kpi:
-    implicants.append([x,bin_data[x]])
-print implicants
+    e_prime_implicants.append([x,bin_data[x]])
+print e_prime_implicants
 
 
 
