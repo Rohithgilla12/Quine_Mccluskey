@@ -19,6 +19,9 @@ for i in choice:
     user_decimal_data.append(i)
     print user_binary_data
     print user_decimal_data
+
+''' STEP-1 combining based on no. of ones present '''
+
 n_0=[] #List of all 0 no.of '1'
 n_d_0=[] #list of decimal no. with 0 no. of ones
 n_1=[]#List of all 1 no.of '1'
@@ -50,7 +53,24 @@ for i in range(len(user_binary_data)): #This loops checks how many '1's are ther
 print n_0,n_1,n_3,n_2,n_4 #just for debugging
 print n_d_0,n_d_1,n_d_3,n_d_2,n_d_4 #just for debugging
 
+''' STEP-2 groping based on one diff term  '''
 
+def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
+        cou=0
+        for i in range(0,3):
+             if not(x1[1]=x2[1]):
+                 cou =cou+1
+                 pos=i    #positio where the difference is , thiscan be dashed eg;0_11
+        if cou==1 :
+            return True,pos
+        else :
+            return False,NONE
+
+
+
+''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
+
+'''next step , using above function we should group based on one diff and dash the pos (10_1) '''
 
 
 
