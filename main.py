@@ -1,28 +1,59 @@
-'''
-bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011',1100,1101,1111]#Binary_data
+
+bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011','1100','1101','1111']#Binary_data
+list_len=int(input("enter no. of minterms"))
+l=list_len-1
+
 choice=[] #userinput (like 1,4,5,6)
+ll=0
+while ll<=l :
+    mn=int(input("enter your minterm"))
+    choice.append(mn)
+    ll=ll+1
 print choice #for debugging
-user_data=[] #list of user choosn terms converted to binary
+user_binary_data=[] #list of user choosn terms converted to binary
+user_decimal_data=[] #list of user choosn terms in decimal form
+
 for i in choice:
     print i
-    user_data.append(bin_data[i])
-    print user_data
-n_0=[] #List of all 0 no.of '1' 
-n_1=[]#List of all 1 no.of '1' 
-n_2=[]#List of all 2 no.of '1' 
-n_3=[]#List of all 3 no.of '1' 
-for i in range(len(user_data)): #This loops checks how many '1's are there in user inputted minterms like 1101 has 3 ones
-    count=user_data[i].count('1') #'1100'.count('1') returns u 2  i.e,no of repeted terms
+    user_binary_data.append(bin_data[i])
+    user_decimal_data.append(i)
+    print user_binary_data
+    print user_decimal_data
+n_0=[] #List of all 0 no.of '1'
+n_d_0=[] #list of decimal no. with 0 no. of ones
+n_1=[]#List of all 1 no.of '1'
+n_d_1=[]
+n_2=[]#List of all 2 no.of '1'
+n_d_2=[]
+n_3=[]#List of all 3 no.of '1'
+n_d_3=[]
+n_4=[]
+n_d_4=[]
+for i in range(len(user_binary_data)): #This loops checks how many '1's are there in user inputted minterms like 1101 has 3 ones
+    count=user_binary_data[i].count('1') #'1100'.count('1') returns u 2  i.e,no of repeted terms
     print count
     if count is 0:
-        n_0.append(user_data[i])
+        n_0.append(user_binary_data[i])
+        n_d_0.append(user_decimal_data[i])
     if count is 1:
-        n_1.append(user_data[i])
+        n_1.append(user_binary_data[i])
+        n_d_1.append(user_decimal_data[i])
     if count is 2:
-        n_2.append(user_data[i])
+        n_2.append(user_binary_data[i])
+        n_d_2.append(user_decimal_data[i])
     if count is 3:
-        n_3.append(user_data[i])
-print n_0,n_1,n_3,n_2 #just for debugging
+        n_3.append(user_binary_data[i])
+        n_d_3.append(user_decimal_data[i])
+    if count is 4:
+        n_4.append(user_binary_data[i])
+        n_d_4.append(user_decimal_data[i])
+print n_0,n_1,n_3,n_2,n_4 #just for debugging
+print n_d_0,n_d_1,n_d_3,n_d_2,n_d_4 #just for debugging
+
+
+
+
+
 '''
 #i did not understand your code check this version for converting minterms into binary strings
 def decimal_to_binary_converter(x) : # function for coverting decimal numbers into binary numbers
@@ -73,10 +104,4 @@ for b in binary_terms:
 
     no_of_ones.append(count)
 print no_of_ones
-
-def combine_s1(x1,x2):  #for combining two minterms based on the no. ones present
-     p=0
-
-     while i <4 :
-         if not (x1[i] = x2[i]) :
-             similar_no
+'''
