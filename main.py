@@ -181,6 +181,49 @@ for x in kpi:
     e_prime_implicants.append([x,bin_data[x]])
 print e_prime_implicants
 
+''' function for convrting binary numbers to texts '''
+def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
+       sc=["l","l","l","l"]
+       sl=list(s)
+
+       i=0
+       while i<4:
+
+           if i==0:
+               if sl[i]=="1":
+                   sc[i]="A"
+               if sl[i]=="0":
+                   sc[i]="A'"
+               if sl[i]=="_":
+                   sc[i]=""
+           if i==1:
+               if sl[i]=="1":
+                   sc[i]="B"
+               if sl[i]=="0":
+                   sc[i]="B'"
+               if sl[i]=="_":
+                   sc[i]=""
+           if i==2:
+               if sl[i]=="1":
+                   sc[i]="C"
+               if sl[i]=="0":
+                   sc[i]="C'"
+               if sl[i]=="_" :
+                   sc[i]=""
+           if i==3:
+               if sl[i]=="1":
+                   sc[i]="D"
+               if sl[i]=="0":
+                   sc[i]="D'"
+               if sl[i]=="_":
+                   sc[i]=""
+           i=i+1
+       return "".join(sc)
+#this above function works perfectly alright do not make any changes
+
+# d="1_01"
+# print bin_to_text_convert(d)
+
 
 
 
