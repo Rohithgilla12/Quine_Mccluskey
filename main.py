@@ -57,12 +57,16 @@ print n_d_0,n_d_1,n_d_3,n_d_2,n_d_4 #just for debugging
 
 def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
         cou=0
+        x1l=list(x1)
+        x2l=list(x2)
         for i in range(0,3):
-             if not(x1[1]=x2[1]):
+             if not (x1l[i]==x2l[i]):
                  cou =cou+1
                  pos=i    #positio where the difference is , thiscan be dashed eg;0_11
-        if cou==1 :
-            return True,pos
+
+
+        if (cou==1):
+              return True,pos
         else :
             return False,NONE
 
