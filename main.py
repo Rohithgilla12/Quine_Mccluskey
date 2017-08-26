@@ -9,13 +9,8 @@ while ll<=l :
     mn=int(input("enter your minterm"))
     choice.append(mn)
     ll=ll+1
-<<<<<<< HEAD
 
-||||||| merged common ancestors
-print choice #for debugging
-=======
-# print choice #for debugging
->>>>>>> 072abd0a6cb55feda7e65ef59252e945162f8b7a
+
 user_binary_data=[] #list of user choosn terms converted to binary
 user_decimal_data=[] #list of user choosn terms in decimal form
 
@@ -23,20 +18,13 @@ for i in choice:
 
     user_binary_data.append(bin_data[i])
     user_decimal_data.append(i)
-<<<<<<< HEAD
+
 
 print user_binary_data
 print user_decimal_data
 
-||||||| merged common ancestors
-    print user_binary_data
-    print user_decimal_data
 
-=======
-    # print user_binary_data
-    # print user_decimal_data
-    #
->>>>>>> 072abd0a6cb55feda7e65ef59252e945162f8b7a
+
 ''' STEP-1 combining based on no. of ones present '''
 
 n_0=[] #List of all 0 no.of '1'
@@ -67,16 +55,10 @@ for i in range(len(user_binary_data)): #This loops checks how many '1's are ther
     if count is 4:
         n_4.append(user_binary_data[i])
         n_d_4.append(user_decimal_data[i])
-<<<<<<< HEAD
-print n_0,n_1,n_2,n_3,n_4 #just for debugging
-print n_d_0,n_d_1,n_d_2,n_d_3,n_d_4 #just for debugging
-||||||| merged common ancestors
-print n_0,n_1,n_3,n_2,n_4 #just for debugging
-print n_d_0,n_d_1,n_d_3,n_d_2,n_d_4 #just for debugging
-=======
-# print n_0,n_1,n_3,n_2,n_4 #just for debugging
-# print n_d_0,n_d_1,n_d_3,n_d_2,n_d_4 #just for debugging
->>>>>>> 072abd0a6cb55feda7e65ef59252e945162f8b7a
+
+# print n_0,n_1,n_2,n_3,n_4 #just for debugging
+# print n_d_0,n_d_1,n_d_2,n_d_3,n_d_4 #just for debugging
+
 
 ''' STEP-2 groping based on one diff term  '''
 
@@ -98,7 +80,7 @@ def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
 prime_imp=[]
 #Add a try block if n_1 has no elements it gives out a error
 
-print'----------------For lists n_0,n_1 -------------------'
+# print'----------------For lists n_0,n_1 -------------------'
 if(len (n_0)>=1 and len(n_1)>=1):
         for i1 in n_0: #For each element in n_1
 
@@ -109,11 +91,11 @@ if(len (n_0)>=1 and len(n_1)>=1):
                     temp2=i2
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
-                    i1=''.join(i1)
-                    print temp1
-                    print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),i1])
-print '-----------------For lists n_1,n_2 -------------------'
+                    ii1=''.join(i1)
+                    # print temp1
+                    # print temp2
+                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),ii1])
+# print '-----------------For lists n_1,n_2 -------------------'
 if(len(n_1)>=1 and len(n_2)>=1):
         for i1 in n_1: #For each element in n_1
             for i2 in n_2: #Comparing with each element in n_2
@@ -123,11 +105,11 @@ if(len(n_1)>=1 and len(n_2)>=1):
                     temp2=i2
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
-                    ii=''.join(i1)
-                    print temp1
-                    print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),i1])
-print'-----------------For lists n_2,n_3 -------------------'
+                    ii1=''.join(i1)
+                    # print temp1
+                    # print temp2
+                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),ii1])
+# print'-----------------For lists n_2,n_3 -------------------'
 if(len(n_2)>=1 and len(n_3)>=1):
         for i1 in n_2: #For each element in n_ 1
             for i2 in n_3: #Comparing with each element in n_2
@@ -137,12 +119,12 @@ if(len(n_2)>=1 and len(n_3)>=1):
                     temp2=i2
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
-                    i1=''.join(i1)
-                    print temp1
-                    print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),i1])
-
-print'-----------------For lists n_3,n_4 -------------------'
+                    ii1=''.join(i1)
+                    # print temp1
+                    # print temp2i
+                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),ii1])
+i
+# print'-----------------For lists n_3,n_4 -------------------'
 if(len(n_3)>=1 and len(n_4)>=1):
         for i1 in n_3: #For each element in n_1
             for i2 in n_4: #Comparing with each element in n_2
@@ -152,10 +134,10 @@ if(len(n_3)>=1 and len(n_4)>=1):
                     temp2=i2
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
-                    i1=''.join(i1)
-                    print temp1
-                    print temp2
-                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),i1])
+                    ii1=''.join(i1)
+                    # print temp1
+                    # print temp2
+                    prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),ii1])
 
 print prime_imp
 
