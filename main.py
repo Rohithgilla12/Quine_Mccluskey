@@ -92,10 +92,10 @@ if(len (n_0)>=1 and len(n_1)>=1):
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
 
-                    print temp1
-                    print temp2
+                    # print temp1
+                    # print temp2
                     prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
-print '-----------------For lists n_1,n_2 -------------------'
+# print '-----------------For lists n_1,n_2 -------------------'
 
 if(len(n_1)>=1 and len(n_2)>=1):
         for i1 in n_1: #For each element in n_1
@@ -107,10 +107,10 @@ if(len(n_1)>=1 and len(n_2)>=1):
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
 
-                    print temp1
-                    print temp2
+                    # print temp1
+                    # print temp2
                     prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
-print'-----------------For lists n_2,n_3 -------------------'
+# print'-----------------For lists n_2,n_3 -------------------'
 
 if(len(n_2)>=1 and len(n_3)>=1):
         for i1 in n_2: #For each element in n_ 1
@@ -122,11 +122,11 @@ if(len(n_2)>=1 and len(n_3)>=1):
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
 
-                    print temp1
-                    print temp2
+                    # print temp1
+                    # print temp2
                     prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
-print'-----------------For lists n_3,n_4 -------------------'
+# print'-----------------For lists n_3,n_4 -------------------'
 
 if(len(n_3)>=1 and len(n_4)>=1):
         for i1 in n_3: #For each element in n_1
@@ -138,8 +138,8 @@ if(len(n_3)>=1 and len(n_4)>=1):
                     i1=list(i1)
                     i1[temp[1]]='_' #Postion to be daashed
 
-                    print temp1
-                    print temp2
+                    # print temp1
+                    # print temp2
                     prime_imp.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
 print prime_imp
