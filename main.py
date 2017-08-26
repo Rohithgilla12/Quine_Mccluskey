@@ -71,12 +71,13 @@ def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
 
             return [False,None]
 implicants=[]
-for i1 in n_1:
-    for i2 in n_2:
+#Add a try block if n_1 has no elements it gives out a error
+for i1 in n_1: #For each element in n_1
+    for i2 in n_2: #Comparing with each element in n_2
         temp=combine_s2(i1,i2)
         if temp[0] is True:
             i=list(i)
-            i[temp[1]]='_'
+            i[temp[1]]='_' #Postion to be daashed
             implicants.append(''.join(i))
 
 # ''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
