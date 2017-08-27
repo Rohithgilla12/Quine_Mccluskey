@@ -61,7 +61,7 @@ for i in range(len(user_binary_data)): #This loops checks how many '1's are ther
 # print n_d_0,n_d_1,n_d_2,n_d_3,n_d_4 #just for debugging
 
 
-''' STEP-2 groping based on one diff term  '''
+''' STEP-2 groping based on one diff term (generating single dashed prime implicants) '''
 
 def combine_s2(x1,x2):  #x1,x2 are binary terms from lists n_0 etc
         cou=0
@@ -194,10 +194,8 @@ for i in range(len(implicants)-1):
 def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
        sc=["l","l","l","l"]
        sl=list(s)
-
        i=0
        while i<4:
-
            if i==0:
                if sl[i]=="1":
                    sc[i]="A"
@@ -228,13 +226,9 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
                    sc[i]=""
            i=i+1
        return "".join(sc)
-
-#__Check this two lines edo error ata
-# for i in e_prime_implicants:
-#     result.append(bin_to_text_convert(i))
 #print result
 
-
+''' for comibining single dashed implicants ("1_01") '''
 i=0
 j=0
 for i in range(len(implicants)):
@@ -255,10 +249,9 @@ for i in range(len(implicants)):
 #print implicants
 #print e_prime_implicantsa
 
+''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes
 import collections
 compare = lambda x, y: collections.Counter(x) == collections.Counter(y)  #dont know what it does , just took it from stackoverflow
-''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes
-
 i=0
 j=0
 for i in e_prime_implicantsa:
@@ -269,21 +262,15 @@ for i in e_prime_implicantsa:
                  del e_prime_implicantsa[e_prime_implicantsa.index(j)]
 #print e_prime_implicantsa
 
-
-
-
-
-
+''' for checking if all prime implicants are included in epi , if a pi is not grouped with any other  pi than the below code adds that particular pi to epi '''
 pk=[]
 for i in implicants :
         #print "i",i
-
         #print c
         j=0
         #print j
         for j in range(0,len(i)-1) :
                 c=0
-
                 #print len(i)
                 for k in e_prime_implicantsa:
                         #print "k",k
@@ -294,82 +281,7 @@ for i in implicants :
                                 #print "c",c
                 if c==0:
                         pk.append(i)
-
                 #print j
-
-
 #print pk
 e_prime_implicantsa.extend(pk)
 print e_prime_implicantsa
-
-
-
-
-#this above function works perfectly alright do not make any changes
-
-# d="1_01"
-# print bin_to_text_convert(d)
-
-
-
-####----------Read this---------------------
-#if a list is l=[1,2,3,4,5] we can get index value by using this l.index('2') gives 3 as answer i used that concept
-
-
-# ''' rohith plz add code here such that x1 is selected from n_x and x2 is selected from n_x+1,and should cover all sets'''
-#
-# '''next step , using above function we should group based on one diff and dash the pos (10_1) '''
-#
-#
-#
-# '''
-# #i did not understand your code check this version for converting minterms into binary strings
-# def decimal_to_binary_converter(x) : # function for coverting decimal numbers into binary numbers
-#     if x==0 :
-#         return "0000"
-#     if x==1 :
-#         return "0001"
-#     if x==2 :
-#         return "0010"
-#     if x==3 :
-#         return "0011"
-#     if x==4 :
-#         return "0100"
-#     if x==5 :
-#         return "0101"
-#     if x==6 :
-#         return "0110"
-#     if x==7 :
-#         return "0111"
-#
-#
-# list_len=int(input('enter the no. of minterms'))
-# l=list_len-1 #first element of a list always has 0 assigned to it
-# kk=0 #just a looping variable
-# binary_terms=[] #list that stores the binary forms of inputted minterms
-# minterms_decimal=[] #list that stores cooresponding decimals
-# while (kk<=l):
-#     k=int(input("enter  minterm"))
-#     minterms_decimal.append(k)
-#     kb=decimal_to_binary_converter(k) #decimal to binary converter
-#     binary_terms.append(kb)
-#     kk=kk+1
-# print binary_terms
-#
-# # step 1 : grouping terms with same number of ones
-#
-# no_of_ones=[]
-#
-# for b in binary_terms:
-#     bb=list(b) # bb is a list of digits if a binary number b eg: if b="0100" ,bb= [0,1,0,0]
-#     ss=0
-#     count=0
-#     while ss<4 :
-#         j= bb[ss]
-#         if j=="1":
-#             count=count+1
-#         ss=ss+1
-#
-#     no_of_ones.append(count)
-# print no_of_ones
-# '''
