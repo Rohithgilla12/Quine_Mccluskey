@@ -255,6 +255,26 @@ for i in range(len(implicants)):
 print implicants
 print e_prime_implicantsa
 
+import collections
+compare = lambda x, y: collections.Counter(x) == collections.Counter(y)  #dont know what it does , just took it from stackoverflow
+''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes 
+e_prime_implicantsa=[[0, 4, 8, 12, '__00'], [8, 12, 0, 4, '__00']]
+print e_prime_implicantsa
+i=0
+j=0
+for i in e_prime_implicantsa:
+    for j in e_prime_implicantsa:
+        if not(i==j):
+            comp=compare(i,j)
+            if comp==True:
+                 del e_prime_implicantsa[e_prime_implicantsa.index(j)]
+print e_prime_implicantsa
+
+
+
+
+
+
 #this above function works perfectly alright do not make any changes
 
 # d="1_01"
