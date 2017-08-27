@@ -226,7 +226,6 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
 
 
 
-
 ####----------Read this---------------------
 #if a list is l=[1,2,3,4,5] we can get index value by using this l.index('2') gives 3 as answer i used that concept
 
