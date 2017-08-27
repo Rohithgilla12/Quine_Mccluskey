@@ -143,7 +143,7 @@ if(len(n_3)>=1 and len(n_4)>=1):
                     # print temp2
                     implicants.append([bin_data.index(temp1),bin_data.index(temp2),''.join(i1)])
 
-print implicants
+#print implicants
 rpi=[] #list that store no. that are not present in implicants
 
 x=0
@@ -179,7 +179,7 @@ for x in rpi:
 e_prime_implicantsa=[]
 for x in kpi:
     e_prime_implicantsa.append([x,bin_data[x]])
-print e_prime_implicantsa
+#print e_prime_implicantsa
 
 for i in range(len(implicants)-1):
         temp=combine_s2(implicants[i][2],implicants[i+1][2])
@@ -188,7 +188,7 @@ for i in range(len(implicants)-1):
              k=list(k)
              k[temp[1]]='_'
              e_prime_implicantsa.append(''.join(k))
-print e_prime_implicantsa
+#print e_prime_implicantsa
 
 ''' function for convrting binary numbers to texts '''
 def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
@@ -232,7 +232,7 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
 #__Check this two lines edo error ata
 # for i in e_prime_implicants:
 #     result.append(bin_to_text_convert(i))
-print result
+#print result
 
 
 i=0
@@ -252,14 +252,13 @@ for i in range(len(implicants)):
              k[temp[1]]='_'
              #print ''.join(k)
              e_prime_implicantsa.append([implicants[i][0],implicants[i][1],implicants[j][0],implicants[j][1],''.join(k)])
-print implicants
-print e_prime_implicantsa
+#print implicants
+#print e_prime_implicantsa
 
 import collections
 compare = lambda x, y: collections.Counter(x) == collections.Counter(y)  #dont know what it does , just took it from stackoverflow
-''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes 
-e_prime_implicantsa=[[0, 4, 8, 12, '__00'], [8, 12, 0, 4, '__00']]
-print e_prime_implicantsa
+''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes
+
 i=0
 j=0
 for i in e_prime_implicantsa:
@@ -268,9 +267,40 @@ for i in e_prime_implicantsa:
             comp=compare(i,j)
             if comp==True:
                  del e_prime_implicantsa[e_prime_implicantsa.index(j)]
+#print e_prime_implicantsa
+
+
+
+
+
+
+pk=[]
+for i in implicants :
+        #print "i",i
+
+        #print c
+        j=0
+        #print j
+        for j in range(0,len(i)-1) :
+                c=0
+
+                #print len(i)
+                for k in e_prime_implicantsa:
+                        #print "k",k
+                        #print "i[j]",i[j]
+                        if i[j] in k :
+                                #print i[j]
+                                c=c+1
+                                #print "c",c
+                if c==0:
+                        pk.append(i)
+
+                #print j
+
+
+#print pk
+e_prime_implicantsa.extend(pk)
 print e_prime_implicantsa
-
-
 
 
 
