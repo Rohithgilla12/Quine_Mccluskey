@@ -229,9 +229,31 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
            i=i+1
        return "".join(sc)
 
-# print result
-some_list=[] #IDK the list name
+#__Check this two lines edo error ata
+# for i in e_prime_implicants:
+#     result.append(bin_to_text_convert(i))
+print result
 
+
+i=0
+j=0
+for i in range(len(implicants)):
+    #print i
+    for j in range(len(implicants)):
+        #print j
+        temp=combine_s2(implicants[i][2],implicants[j][2])
+        #print temp
+        if temp[0] is True:
+             #print temp[0]
+             k=implicants[i][2]
+             #print k
+             k=list(k)
+             #print k
+             k[temp[1]]='_'
+             #print ''.join(k)
+             e_prime_implicantsa.append([implicants[i][0],implicants[i][1],implicants[j][0],implicants[j][1],''.join(k)])
+print implicants
+print e_prime_implicantsa
 
 #this above function works perfectly alright do not make any changes
 
