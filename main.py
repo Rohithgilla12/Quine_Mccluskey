@@ -2,7 +2,7 @@
 bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011','1100','1101','1111']#Binary_data
 list_len=int(input("enter no. of minterms"))
 l=list_len-1
-
+result=[]
 choice=[] #userinput (like 1,4,5,6)
 ll=0
 while ll<=l :
@@ -219,6 +219,10 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
                    sc[i]=""
            i=i+1
        return "".join(sc)
+for i in e_prime_implicants:
+    result.append(bin_to_text_convert(i))
+print result
+
 #this above function works perfectly alright do not make any changes
 
 # d="1_01"
