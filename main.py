@@ -222,6 +222,14 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
 for i in e_prime_implicants:
     result.append(bin_to_text_convert(i))
 print result
+some_list=[] #IDK the list name
+for i in range(len(implicants)-1):
+        temp=combine_s2(implicants[i][2],implicants[i+1][2])
+        if temp[0] is True:
+             k=implicants[i][2]
+             k=list(k)
+             k[temp[1]]='_'
+             some_list.append(''.join(k))
 
 #this above function works perfectly alright do not make any changes
 
