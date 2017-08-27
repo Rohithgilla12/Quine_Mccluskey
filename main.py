@@ -176,10 +176,19 @@ for x in rpi:
         if x==y:
             # print x
             kpi.append(x)
-e_prime_implicants=[]
+e_prime_implicantsa=[]
 for x in kpi:
-    e_prime_implicants.append([x,bin_data[x]])
-print e_prime_implicants
+    e_prime_implicantsa.append([x,bin_data[x]])
+print e_prime_implicantsa
+
+for i in range(len(implicants)-1):
+        temp=combine_s2(implicants[i][2],implicants[i+1][2])
+        if temp[0] is True:
+             k=implicants[i][2]
+             k=list(k)
+             k[temp[1]]='_'
+             e_prime_implicantsa.append(''.join(k))
+print e_prime_implicantsa
 
 ''' function for convrting binary numbers to texts '''
 def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
@@ -219,17 +228,10 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
                    sc[i]=""
            i=i+1
        return "".join(sc)
-for i in e_prime_implicants:
-    result.append(bin_to_text_convert(i))
-print result
+
+# print result
 some_list=[] #IDK the list name
-for i in range(len(implicants)-1):
-        temp=combine_s2(implicants[i][2],implicants[i+1][2])
-        if temp[0] is True:
-             k=implicants[i][2]
-             k=list(k)
-             k[temp[1]]='_'
-             some_list.append(''.join(k))
+
 
 #this above function works perfectly alright do not make any changes
 
