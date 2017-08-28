@@ -197,33 +197,33 @@ def bin_to_text_convert(s) : #s ia string containing 4 characters eg: '10_1'
        i=0
        while i<4:
            if i==0:
-               if sl[i]=="1":
-                   sc[i]="A"
-               if sl[i]=="0":
-                   sc[i]="A'"
-               if sl[i]=="_":
-                   sc[i]=""
+               if sl[0]=="1":
+                   sc[0]="A"
+               if sl[0]=="0":
+                   sc[0]="A'"
+               if sl[0]=="_":
+                   sc[0]=""
            if i==1:
-               if sl[i]=="1":
-                   sc[i]="B"
-               if sl[i]=="0":
-                   sc[i]="B'"
-               if sl[i]=="_":
-                   sc[i]=""
+               if sl[1]=="1":
+                   sc[1]="B"
+               if sl[1]=="0":
+                   sc[1]="B'"
+               if sl[1]=="_":
+                   sc[1]=""
            if i==2:
-               if sl[i]=="1":
-                   sc[i]="C"
-               if sl[i]=="0":
-                   sc[i]="C'"
-               if sl[i]=="_" :
-                   sc[i]=""
+               if sl[2]=="1":
+                   sc[2]="C"
+               if sl[2]=="0":
+                   sc[2]="C'"
+               if sl[2]=="_" :
+                   sc[2]=""
            if i==3:
-               if sl[i]=="1":
-                   sc[i]="D"
-               if sl[i]=="0":
-                   sc[i]="D'"
-               if sl[i]=="_":
-                   sc[i]=""
+               if sl[3]=="1":
+                   sc[3]="D"
+               if sl[3]=="0":
+                   sc[3]="D'"
+               if sl[3]=="_":
+                   sc[3]=""
            i=i+1
        return "".join(sc)
 #print result
@@ -304,7 +304,7 @@ for i in e_prime_implicantsa:
                  if i not in new_epi:
                      new_epi.append(i)
 
-print new_epi
+#print new_epi
 final_epi=[]
 def check_list(i):
     f=0
@@ -329,7 +329,7 @@ for i in user_decimal_data :
         pass
     else :
         gal=get_all_lists(i)
-        if len(gal)==3:
+        if len(gal)==1:
             final_epi.append(gal)
         else:
             for g in gal:
@@ -347,8 +347,11 @@ for i in user_decimal_data :
                 else:
                     final_epi.append(g)
                     break
-print final_epi
+#print final_epi
 result=[]
 for i in final_epi:
-    result.append(bin_to_text_convert(i[-1]))
+    try:
+        result.append(bin_to_text_convert(i[-1]))
+    except:
+        result.append(bin_to_text_convert(i[-1][-1]))
 print "The optimised Quine_McCulsky form is : "+"+".join(result)
