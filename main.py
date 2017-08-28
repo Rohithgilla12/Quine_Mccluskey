@@ -305,3 +305,22 @@ for i in e_prime_implicantsa:
                      new_epi.append(i)
 
 print new_epi
+def check_list(i):
+    f=0
+    gf=0
+    for h in final_epi:
+        if i in h:
+            gf=gf+1
+    if not(gf==0):
+        return True
+    else :
+        return False
+
+
+i=0
+for i in user_decimal_data :
+    c=check_list(i)   #checklist is a function which finds if i is already present in new_epi or not , it returns true or false
+    if c==True :
+        break
+    else :
+        "we go to next function"
