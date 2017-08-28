@@ -305,6 +305,7 @@ for i in e_prime_implicantsa:
                      new_epi.append(i)
 
 print new_epi
+final_epi=[]
 def check_list(i):
     f=0
     gf=0
@@ -316,11 +317,20 @@ def check_list(i):
     else :
         return False
 
+def get_all_lists(i):
+    gal=[]
+    for fg in new_epi:
+        if i in fg :
+            gal.extend(fg)
+    return gal
 
 i=0
 for i in user_decimal_data :
     c=check_list(i)   #checklist is a function which finds if i is already present in new_epi or not , it returns true or false
+    #print c
     if c==True :
-        break
+
+        gilla="griopj"
     else :
-        "we go to next function"
+        #print i
+        gal=get_all_lists(i)
