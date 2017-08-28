@@ -1,5 +1,5 @@
 
-bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011','1100','1101','1111']#Binary_data
+bin_data=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001','1010','1011','1100','1101','1110','1111']#Binary_data
 list_len=int(input("enter no. of minterms"))
 l=list_len-1
 result=[]
@@ -316,21 +316,39 @@ def check_list(i):
         return True
     else :
         return False
-
 def get_all_lists(i):
     gal=[]
     for fg in new_epi:
         if i in fg :
-            gal.extend(fg)
+            gal.append(fg)
     return gal
-
 i=0
 for i in user_decimal_data :
     c=check_list(i)   #checklist is a function which finds if i is already present in new_epi or not , it returns true or false
-    #print c
     if c==True :
-
-        gilla="griopj"
+        pass
     else :
-        #print i
         gal=get_all_lists(i)
+        if len(gal)==3:
+            final_epi.append(gal)
+        else:
+            for g in gal:
+                temp=[]
+                temp=g[:]
+                t=len(temp)
+                temp.remove(i)
+                temp.pop()
+                q=0
+                for k in temp:
+                    if check_list(k)==True:
+                        q=q+1
+                if q is (t-2):
+                    continue
+                else:
+                    final_epi.append(g)
+                    break
+print final_epi
+result=[]
+for i in final_epi:
+    result.append(bin_to_text_convert(i[-1]))
+print "The optimised Quine_McCulsky form is : "+"+".join(result)
