@@ -322,5 +322,3 @@ for i in user_decimal_data :
     c=check_list(i)   #checklist is a function which finds if i is already present in new_epi or not , it returns true or false
     if c==True :
         break
-    else :
-        "we go to next function"
