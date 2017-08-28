@@ -250,6 +250,19 @@ for i in range(len(implicants)):
 #print e_prime_implicantsa
 
 
+''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes
+# import collections
+# compare = lambda x, y: collections.Counter(x) == collections.Counter(y)  #dont know what it does , just took it from stackoverflow
+# i=0
+# j=0
+# for i in e_prime_implicantsa:
+#     for j in e_prime_implicantsa:
+#         if not(i==j):
+#             comp=compare(i,j)
+#             if comp==True:
+#                  del e_prime_implicantsa[e_prime_implicantsa.index(j)]
+#print e_prime_implicantsa
+
 
 ''' for checking if all prime implicants are included in epi , if a pi is not grouped with any other  pi than the below code adds that particular pi to epi '''
 pk=[]
@@ -273,26 +286,22 @@ for i in implicants :
                 #print j
 #print pk
 e_prime_implicantsa.extend(pk)
-#print e_prime_implicantsa
-''' for removing common e_prime_implicantsa '''  #this works fine , donot make changes
-# import collections
-# compare = lambda x, y: collections.Counter(x) == collections.Counter(y)  #dont know what it does , just took it from stackoverflow
-# new_epi=[]
-# i1=0
-# for i in e_prime_implicantsa:
-#     for i1 in range(len(e_prime_implicantsa)):
-#         if compare(i,e_prime_implicantsa[i]) is False:
-#             new_epi.append(i)
 
-'''
+import collections
+compare = lambda x, y: collections.Counter(x) == collections.Counter(y)  #dont know what it does , just took it from stackoverflow
 i=0
 j=0
+# for i in e_prime_implicantsa:
+#     for j in e_prime_implicantsa:
+#         if not(i==j):
+#             comp=compare(i,j)
+#             if comp==True:
+#                  del e_prime_implicantsa[e_prime_implicantsa.index(j)]
+new_epi=[]
 for i in e_prime_implicantsa:
-    for j in e_prime_implicantsa:
-        if not(i==j):
-            comp=compare(i,j)
-            if comp==True:
-                 del e_prime_implicantsa[e_prime_implicantsa.index(j)]
-#print e_prime_implicantsa
-'''
-print e_prime_implicantsa
+         for i1 in e_prime_implicantsa:
+             if compare(i,i1) is False:
+                 if i not in new_epi:
+                     new_epi.append(i)
+
+print new_epi
